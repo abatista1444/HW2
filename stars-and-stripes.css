@@ -3,20 +3,26 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background-image: url("fireworks.jpeg");
+    background-image: url("harbor.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     font-family: Arial, sans-serif;
+    overflow: hidden; 
 }
 
-/* Dark overlay so text pops */
+/* Fixed Overlay: Set to position absolute so it doesn't push down layout elements */
 .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background: rgba(0, 0, 0, 0.35);
+    z-index: 1;
 }
 
 /* Main header */
@@ -25,11 +31,85 @@ h1 {
     font-size: 80px;
     color: white;
     text-align: center;
-
-    /* extra pop effect */
     text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
 }
+
 html {
-    /* Path to your flame PNG, followed by the mandatory fallback cursor */
-    cursor: url('flame.png'), auto;
+    cursor: url('rocket.png'), auto;
+}
+
+/* --- CROWD SILHOUETTE & JUMPING ANIMATION --- */
+/* --- CROWD SILHOUETTE & JUMPING ANIMATION --- */
+.crowd {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 350px; /* Gives the image plenty of vertical breathing room */
+    
+    background-image: url("crowd.jpg"); 
+    
+    /* FIXES: 'contain' stops it from cropping, 'bottom' forces it to sit flush */
+    background-size: contain;
+    background-position: bottom center;
+    background-repeat: repeat-x; /* Repeats the crowd horizontally if the screen is wide */
+    
+    z-index: 8; 
+    pointer-events: none; 
+
+    /* Mix-blend-mode works cleanly with the background overlay */
+    mix-blend-mode: multiply; 
+
+    animation: crowd-jump 0.8s ease-in-out infinite alternate;
+}
+
+/* Keyframes controlling the vertical jumping displacement */
+@keyframes crowd-jump {
+    0% {
+        transform: translateY(0); 
+    }
+    100% {
+        transform: translateY(-25px); 
+    }
+}
+
+/* --- SKY FIREWORKS BACKGROUND CONTAINER --- */
+
+.sky-fireworks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 60vh; /* Keeps fireworks in the upper sky area above the crowd */
+    z-index: 2;   /* Sits in front of the background image, but behind the text */
+    pointer-events: none; /* Prevents the animations from blocking mouse clicks */
+}
+
+/* Base properties for all firework bursts */
+.firework-burst {
+    position: absolute;
+    width: 200px;  /* Size of the firework explosion */
+    height: 200px;
+    background-image: url("gif1.gif"); /* Your firework GIF asset */
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Position individual fireworks at different coordinates in the sky */
+.fw-1 {
+    top: 10%;
+    left: 15%;
+}
+
+.fw-2 {
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%); /* Centers this burst right behind the title */
+    width: 250px;  /* Making the centerpiece slightly larger */
+    height: 250px;
+}
+
+.fw-3 {
+    top: 15%;
+    left: 75%;
 }
