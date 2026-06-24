@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background-image: url("fireworks.jpeg");
+    background-image: url("assets/fireworks.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -28,4 +28,8 @@ h1 {
 
     /* extra pop effect */
     text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
+}
+html {
+    /* Path to your flame PNG, followed by the mandatory fallback cursor */
+    cursor: url('assets/flame.png'), auto;
 }
