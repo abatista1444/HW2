@@ -3,20 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fourth of July</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-
+    <title>Fourth of July - Stars & Stripes Canvas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stars-and-stripes.css">
 </head>
-
 <body>
 
-    <div class="overlay">
-        <h1>Fourth of July</h1>
-    </div>
+    <header class="main-header">
+        <div class="logo">🎆 Liberty 2026</div>
+        <nav class="nav-links">
+        </nav>
+    </header>
 
+    <main class="dashboard-layout">
+        <section class="hero-section">
+            <h1 class="animated-headline">Fourth of July</h1>
+            <p class="hero-subtitle">Fireworks Over the Harbor</p>
+        </section>
+    </main>
+
+    <div class="harbor-boat boat-1"></div>
+    <div class="harbor-boat boat-2"></div>
+
+    <div class="flying-rocket"></div>
+    <div class="city-lights-flicker"></div> <div class="overlay"></div>
+    <div class="water-reflection"></div>
     <div class="crowd"></div>
+
+    
 
     <div class="sky-fireworks">
         <div class="firework-burst fw-1"></div>
@@ -24,12 +38,15 @@
         <div class="firework-burst fw-3"></div>
     </div>
 
-    <div >
-        <audio controls>
-            <source src="sound.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-    </div>
+    <audio controls loop class="audio-player" aria-label="Patriotic background audio">
+        <source src="sound.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <footer class="main-footer">
+        <p>Happy 4th of July!</p>
+        <p class="credits">&copy; 2026. Created for Web Development HW2.</p>
+    </footer>
 
 </body>
 </html>
