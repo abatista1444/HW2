@@ -1,0 +1,31 @@
+/* Full screen background */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url("fireworks.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+}
+
+/* Dark overlay so text pops */
+.overlay {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+/* Main header */
+h1 {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 80px;
+    color: white;
+    text-align: center;
+
+    /* extra pop effect */
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
+}
